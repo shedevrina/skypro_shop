@@ -11,6 +11,9 @@ class Category(models.Model):
     )
     description_category = models.TextField(null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.name_category} {self.description_category}'
+
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
@@ -34,6 +37,11 @@ class Product(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return f'{self.name_product} {self.price_all}'
+
 
     class Meta:
         verbose_name = "продукт"
