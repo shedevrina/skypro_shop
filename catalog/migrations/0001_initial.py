@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
                 ("description_product", models.TextField(blank=True, null=True)),
                 (
                     "image",
-                    models.ImageField(upload_to="product", verbose_name="Фотография"),
+                    models.ImageField(upload_to="photos", verbose_name="Фотография"),
                 ),
                 (
                     "price_all",

@@ -1,4 +1,4 @@
-<!-- library/templates/library/books_detail.html -->
+<!-- library/templates/library/product_detail.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">{{ product.name_product }}</h1>
-        <p>Фотография: <img src="{{ product.photo.url }}" alt="{{ product.name_product }} {{ product.category.name_category }}"></p>
+        <p>Фотография: <img src="{{ product.photos.url }}" alt="{{ product.name_product }} {{ product.category.name_category }}"></p>
         <p>Описание: {{ product.description_product }} {{ product.category.name_category }}</p>
         <p>Цена продукта: {{ product.price_all|upper }}</p>
     </div>
