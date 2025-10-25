@@ -1,21 +1,27 @@
-<!-- library/templates/library/product_detail.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Детали продукта</title>
-    <!-- Подключение Bootstrap CSS -->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="mb-4">{{ product.name_product }}</h1>
-        <p>Фотография: <img src="{{ product.photos.url }}" alt="{{ product.name_product }} {{ product.category.name_category }}"></p>
-        <p>Описание: {{ product.description_product }} {{ product.category.name_category }}</p>
-        <p>Цена продукта: {{ product.price_all|upper }}</p>
-    </div>
-    <!-- Подключение Bootstrap JS -->
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="album py-5 bg-body-tertiary">
+            <div class="container">
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{{ product.image | media_filter }}">
+                            <div class="card-body">
+                                <p class="card-text">{{ product.name_product|upper }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat similar blocks for more cards -->
+                </div>
+
+            </div>
+        </div>
+{% endblock %}

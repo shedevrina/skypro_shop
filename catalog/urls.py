@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from django.urls import path
 from catalog.apps import CatalogConfig
-from catalog.views import home, contacts, product_details, product_list
+from catalog.views import products_list, contacts, product_detail
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -11,9 +11,9 @@ from django.conf.urls.static import static
 app_name = CatalogConfig.name
 
 urlpatterns = [
-    path("home/", home, name="home"),
+    path('', products_list,name="products_list" ),
     path("contacts/", contacts, name="contacts"),
-    path("product_details/", product_details, name="product_details"),
+    path("products/<int:pk>", product_detail, name="product_detail"),
 ]
 
 
